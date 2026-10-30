@@ -1,0 +1,157 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.6.0/bin/node",
+      "/Users/ancafolo/Documents/learn-playwright/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/Users/ancafolo/Documents/learn-playwright/playwright.config.ts",
+    "rootDir": "/Users/ancafolo/Documents/learn-playwright",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/ancafolo/Documents/learn-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/ancafolo/Documents/learn-playwright",
+        "testIgnore": [],
+        "testMatch": [
+          "tests/alerts.test.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "jsonReports/jsonReport.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "open": "always"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/alerts.test.ts",
+      "file": "tests/alerts.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Working with Modals",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30152,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/ancafolo/Documents/learn-playwright/tests/alerts.test.ts",
+                        "column": 14,
+                        "line": 42
+                      },
+                      "message": "Error: page.waitForTimeout: Test timeout of 30000ms exceeded.\n\n\u001b[0m \u001b[90m 40 |\u001b[39m   \u001b[36mconst\u001b[39m saveChangesBtn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Save Changes'\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m   \u001b[36mawait\u001b[39m saveChangesBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 42 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m5000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 43 |\u001b[39m })\n \u001b[90m 44 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/ancafolo/Documents/learn-playwright/tests/alerts.test.ts:42:14\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-08-18T14:30:42.245Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/ancafolo/Documents/learn-playwright/test-results/tests-alerts-Working-with-Modals/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/ancafolo/Documents/learn-playwright/test-results/tests-alerts-Working-with-Modals/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/ancafolo/Documents/learn-playwright/test-results/tests-alerts-Working-with-Modals/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "addb81fc64a6c6200bbb-c1a0335dea05503da28e",
+          "file": "tests/alerts.test.ts",
+          "line": 36,
+          "column": 6
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-18T14:30:41.992Z",
+    "duration": 31419.78,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
