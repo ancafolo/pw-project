@@ -4,7 +4,7 @@ import {PlaywrightTestConfig, devices} from '@playwright/test';
 const config: PlaywrightTestConfig = {
   testMatch: ["tests/e2e/**/*.test.ts"],
   use: {
-    headless: false,
+    headless: !!process.env.CI,
     screenshot: "on",
     video: "retain-on-failure",
   },
