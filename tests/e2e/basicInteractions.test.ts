@@ -1,7 +1,13 @@
 import { test, expect } from   "@playwright/test";
+import * as allure from "allure-js-commons";
 
 
-test("Interaction with inputs", async ({page}) => {
+
+test("Interaction with inputs @allure."  + 
+    " @allure.label.epic:Alerts" +
+    ' @allure.label.feature:"Display alert"' +
+    " @allure.label.tag:smoke",
+    async ({page}) => {
     await page.goto("https://www.testmuai.com/selenium-playground/simple-form-demo/")
     const messageInput = page.locator('input#user-message');
     await messageInput.scrollIntoViewIfNeeded();
