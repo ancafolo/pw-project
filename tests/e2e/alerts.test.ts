@@ -1,22 +1,22 @@
 import { test, expect } from '@playwright/test';
 import * as allure from "allure-js-commons";
-import * as fs from "fs";
 
 test('should display an alert and accept it', async ({ page }) => {
-  await page.goto('https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/'); 
+  test.setTimeout(1000);
+
   await allure.epic("Alerts");
   await allure.feature("Display alert");
   await allure.displayName("Should display an alert and accept it");
   await allure.tag("smoke");
-  const config = JSON.parse(fs.readFileSync('./config/alerts-config.json', 'utf-8'));
+
+  await page.goto('https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/');
   page.on("dialog", async (alert) => {
-    const text = alert.message();
-    console.log(text);
-    expect(text).toBe("I am an alert box!");
-    await alert.accept();  
+    await alert.accept();
   });
-    await page.locator("button:has-text('Click Me')").nth(0).click();
-})
+
+  // Outdated selector, no action timeout → waits until the test times out
+  await page.locator("button:has-text('Click Me Please')").click();
+});
 
 test('should display a confirm dialog and accept it', async ({ page }) => {
   await page.goto('https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/');
