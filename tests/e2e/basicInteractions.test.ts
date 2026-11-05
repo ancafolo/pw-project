@@ -3,12 +3,12 @@ import * as allure from "allure-js-commons";
 
 
 
-test("Interaction with inputs @allure."  + 
-    " @allure.label.epic:Alerts" +
-    ' @allure.label.feature:"Display alert"' +
-    " @allure.label.tag:smoke",
-    async ({page}) => {
+test("Interaction with inputs", async ({page}) => {
     await page.goto("https://www.testmuai.com/selenium-playground/simple-form-demo/")
+    await allure.epic("Interactions");
+    await allure.feature("input");
+    await allure.displayName("Interaction with inputs");
+    await allure.tag("e2e");
     const messageInput = page.locator('input#user-message');
     await messageInput.scrollIntoViewIfNeeded();
     console.log(await messageInput.getAttribute("placeholder"));
@@ -25,6 +25,10 @@ test("Interaction with inputs @allure."  +
 
 test ("Interactions with assertions", async ({page}) => {
     await page.goto("https://www.testmuai.com/selenium-playground/simple-form-demo/");
+    await allure.epic("Interactions");
+    await allure.feature("sum");
+    await allure.displayName("Interactin with assertions");
+    await allure.tag("e2e");
     const sum1input = page.locator("#sum1");
     const sum2input = page.locator("#sum2");
     const getValueBtn = page.getByRole('button', { name: 'Get Sum' })
@@ -42,13 +46,16 @@ test ("Interactions with assertions", async ({page}) => {
 
 test ("Interactions with checkboxes", async ({page}) => {
     await page.goto("https://www.testmuai.com/selenium-playground/checkbox-demo/");
+    await allure.epic("Interactions");
+    await allure.feature("checkbox");
+    await allure.displayName("Interaction with checkboxes");
+    await allure.tag("e2e");
     const singleCheckbox = page.getByRole('checkbox', { name: 'Click on check box' });
     expect(singleCheckbox).not.toBeChecked();
     await singleCheckbox.check();
     expect(singleCheckbox).toBeChecked();
     await singleCheckbox.uncheck();
     expect(singleCheckbox).not.toBeChecked();
-
 
 })
 

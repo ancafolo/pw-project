@@ -1,4 +1,5 @@
 import { test,chromium } from "@playwright/test";
+import * as allure from "allure-js-commons";
 
 test.skip("Login test demo", async () => {
 
@@ -9,6 +10,10 @@ test.skip("Login test demo", async () => {
     const page = await context.newPage();
 
     await page.goto("https://ecommerce-playground.lambdatest.io/");
+    await allure.epic("Login");
+    await allure.feature("Login");
+    await allure.displayName("Login test demo");
+    await allure.tag("smoke");
     await page.hover("//a[@data-toggle='dropdown']//span[contains(.,'My account')]")
     //await page.click("text=Login");
     await page.click("'Login'");
