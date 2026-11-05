@@ -42,7 +42,7 @@ test('should display a prompt dialog and input text', async ({ page }) => {
         // await alert.accept();  
       });
       await page.locator("button:has-text('Click Me')").nth(2).click();
-      //expect(page.locator('id=prompt-demo')).toContainText("Anca");
+      expect(page.locator('id=prompt-demo')).toContainText("Anca");
 });
 
 test("Working with Modals", async ({page}) => {
